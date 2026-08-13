@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EmpTrack — Employees</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">👥</div>
+      <div>
+        <div class="logo-text">EmpTrack</div>
+        <div class="logo-sub">Employee Management</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section-title">Main</div>
+      <a href="index.html" class="nav-link"><span class="icon">🏠</span> Dashboard</a>
+      <a href="employees.html" class="nav-link active"><span class="icon">👤</span> Employees</a>
+      <a href="departments.html" class="nav-link"><span class="icon">🏢</span> Departments</a>
+      <div class="nav-section-title">Actions</div>
+      <a href="add-employee.html" class="nav-link"><span class="icon">➕</span> Add Employee</a>
+    </nav>
+    <div class="sidebar-footer">EmpTrack v1.0 &copy; 2025</div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main-content">
+    <header class="topbar">
+      <div class="topbar-title">Employees</div>
+      <div class="topbar-actions">
+        <a href="add-employee.html" class="btn btn-primary">➕ Add Employee</a>
+        <div class="topbar-user">
+          <div class="topbar-user-avatar">AD</div>
+          <span class="topbar-user-name">Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-body">
+      <div class="page-header">
+        <div>
+          <h1>All Employees <span class="count-pill" id="employee-count">0</span></h1>
+          <p>Manage your workforce — search, filter, edit, and delete.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <!-- Filters -->
+        <div class="filters-bar">
+          <div class="search-wrapper">
+            <i class="search-icon">🔍</i>
+            <input type="text" id="search-input" placeholder="Search by name, email, position…" />
+          </div>
+          <select id="filter-status">
+            <option value="">All Status</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+            <option value="on_leave">On Leave</option>
+          </select>
+          <select id="filter-dept">
+            <option value="">All Departments</option>
+          </select>
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Employee</th>
+                <th>Position</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Hire Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="employee-table-body">
+              <tr>
+                <td colspan="7" style="text-align:center;padding:40px;color:#94a3b8">
+                  Loading employees…
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal-overlay" id="delete-modal">
+  <div class="modal">
+    <h3>🗑️ Confirm Deletion</h3>
+    <p>Are you sure you want to delete <strong id="delete-name"></strong>?
+       This action cannot be undone.</p>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" id="cancel-delete-btn">Cancel</button>
+      <button class="btn btn-danger"    id="confirm-delete-btn">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast-container"></div>
+
+<script src="js/config.js"></script>
+<script src="js/employees.js"></script>
+</body>
+</html>

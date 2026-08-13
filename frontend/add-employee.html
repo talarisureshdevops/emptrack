@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EmpTrack — Add Employee</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">👥</div>
+      <div>
+        <div class="logo-text">EmpTrack</div>
+        <div class="logo-sub">Employee Management</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section-title">Main</div>
+      <a href="index.html"      class="nav-link"><span class="icon">🏠</span> Dashboard</a>
+      <a href="employees.html"  class="nav-link"><span class="icon">👤</span> Employees</a>
+      <a href="departments.html" class="nav-link"><span class="icon">🏢</span> Departments</a>
+      <div class="nav-section-title">Actions</div>
+      <a href="add-employee.html" class="nav-link active"><span class="icon">➕</span> Add Employee</a>
+    </nav>
+    <div class="sidebar-footer">EmpTrack v1.0 &copy; 2025</div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main-content">
+    <header class="topbar">
+      <div class="topbar-title">Add Employee</div>
+      <div class="topbar-actions">
+        <div class="topbar-user">
+          <div class="topbar-user-avatar">AD</div>
+          <span class="topbar-user-name">Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-body">
+      <div class="breadcrumb">
+        <a href="employees.html">Employees</a>
+        <span class="sep">›</span>
+        <span>Add New</span>
+      </div>
+
+      <div class="page-header">
+        <div>
+          <h1>➕ Add New Employee</h1>
+          <p>Fill in the details below to register a new team member.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <form id="add-employee-form" novalidate>
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="first_name">First Name *</label>
+                <input type="text" id="first_name" name="first_name"
+                       placeholder="Alice" required />
+              </div>
+
+              <div class="form-group">
+                <label for="last_name">Last Name *</label>
+                <input type="text" id="last_name" name="last_name"
+                       placeholder="Johnson" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email"
+                       placeholder="alice@company.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone"
+                       placeholder="+1-555-0100" />
+              </div>
+
+              <div class="form-group">
+                <label for="position">Job Position *</label>
+                <input type="text" id="position" name="position"
+                       placeholder="Senior Engineer" required />
+              </div>
+
+              <div class="form-group">
+                <label for="department_id">Department *</label>
+                <select id="department_id" name="department_id" required>
+                  <option value="">Select department…</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="salary">Annual Salary (USD) *</label>
+                <input type="number" id="salary" name="salary"
+                       placeholder="75000" min="0" step="0.01" required />
+              </div>
+
+              <div class="form-group">
+                <label for="hire_date">Hire Date *</label>
+                <input type="date" id="hire_date" name="hire_date" required />
+              </div>
+
+              <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                  <option value="active">Active</option>
+                  <option value="inactive">Inactive</option>
+                  <option value="on_leave">On Leave</option>
+                </select>
+              </div>
+
+            </div><!-- /form-grid -->
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="submit-btn">
+                💾 Save Employee
+              </button>
+              <a href="employees.html" class="btn btn-secondary">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+<script src="js/config.js"></script>
+<script src="js/add-employee.js"></script>
+</body>
+</html>
