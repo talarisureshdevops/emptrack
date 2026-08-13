@@ -2,7 +2,7 @@
 // API Configuration — Change this to match
 // your backend server IP/port when deploying
 // ============================================
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'http://172.31.27.21:5000/api';
 
 // Utility: show toast notifications
 const Toast = {
